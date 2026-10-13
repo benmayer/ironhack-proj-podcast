@@ -1,0 +1,1073 @@
+14:05:54 --> 14:05:55
+Tejal Bhatti: Okay.
+
+14:05:58 --> 14:06:00
+Tejal Bhatti: Okay.
+
+14:06:00 --> 14:06:11
+Tejal Bhatti: So, pandas, we already saw yesterday. Panda, that is library in Python, that is used when we want to work with tabular data.
+
+14:06:12 --> 14:06:30
+Tejal Bhatti: Okay? Another, we have NumPy. So, uh, when we do this machine learning algorithm task, so behind the scene, there are so many calculations going on. So, NumPy is the library that is responsible for fast mathematic operation.
+
+14:06:31 --> 14:06:59
+Tejal Bhatti: Okay, the third train test split. Did you remember we need to split our data into 80% and 20%? So this particular tool from, okay, sklearn or scikit-learn, that is library specifically used for machine learning algorithm. Okay, in that library we have different modules, so train test split, that is one of the tool from the sklearn library.
+
+14:06:59 --> 14:07:04
+Tejal Bhatti: And it is used to split our data into training and the testing.
+
+14:07:04 --> 14:07:23
+Tejal Bhatti: After that, we have standard scaler. So, what standard scaler will do, um, I will explain you, uh, afterwards, it's there in the notebook. Right now, just remember, it put all the features on the same scale, so that your model will not get biased, uh, whenever there are big numbers.
+
+14:07:23 --> 14:07:38
+Tejal Bhatti: Okay? For example, in our feature, we have age also, and um… we have house price also. So, of course, the age will be maximum 2-digit, but the price will be 4-5-digit.
+
+14:07:38 --> 14:07:45
+Tejal Bhatti: Correct, and at the end of the day, machine will see everything in form of number.
+
+14:07:45 --> 14:08:00
+Tejal Bhatti: So, if particular column has so many high numbers, and the age column will have the low number as compared to price of the house. So, in that case, our algorithm may give more importance to that price of the house column.
+
+14:08:00 --> 14:08:08
+Tejal Bhatti: But that is not what we want, right? So, we will do standard scalar, so all the data will be on the same scale.
+
+14:08:11 --> 14:08:34
+Tejal Bhatti: Then variance threshold that is also tool from sklearn. What it will do, it will remove features that never change. For example, in your data set, if you have one particular column, say country and country is equal to UK, UK, UK in all the rows, so that particular column will not give any information to model, right?
+
+14:08:35 --> 14:08:39
+Tejal Bhatti: There is no variation in the data.
+
+14:08:38 --> 14:08:41
+Elif Yurdakul: It's, like, ineffective, so…
+
+14:08:41 --> 14:08:44
+Elif Yurdakul: It can be removable then.
+
+14:08:43 --> 14:08:58
+Tejal Bhatti: Yes. So, when your feature is not giving variation, then we can remove it, because that is useless, that will be burden on our algorithm. So, we can remove that with the help of this tool, Variance Threshold.
+
+14:08:58 --> 14:09:15
+Tejal Bhatti: Then, we have logistic regression. In the morning, we see, uh, we saw linear regression, right? So, linear regression, that is for, uh, continuous number. The same way, logistic regression is used to predict classes.
+
+14:09:15 --> 14:09:22
+Tejal Bhatti: For the classification problem, but it is also in the same family of that linear relationship.
+
+14:09:22 --> 14:09:28
+Tejal Bhatti: We have random forest classifier, so this is one advancement of decision tree.
+
+14:09:29 --> 14:09:45
+Tejal Bhatti: Then accuracy score, precision score, these all are the evaluation metrics that are the tool in, uh… these are the metrics as a tool in SQL library. So, with this tool, we can evaluate the performance of our model.
+
+14:09:45 --> 14:09:47
+Tejal Bhatti: Okay?
+
+14:09:47 --> 14:09:49
+Tejal Bhatti: So this part is clear.
+
+14:09:50 --> 14:09:51
+Tejal Bhatti: No.
+
+14:09:51 --> 14:10:06
+Tejal Bhatti: Here, our first dataset is Titanic dataset. So here, instead of storing a CSV file on your local system, here, I have given you a link. So directly, it will go to that link, and it will download the data for you.
+
+14:10:07 --> 14:10:13
+Tejal Bhatti: So, this is now pd.read_csv, okay? You remember from yesterday?
+
+14:10:14 --> 14:10:15
+Tejal Bhatti: So here…
+
+14:10:14 --> 14:10:18
+Elif Yurdakul: Should we click on this? Should we do something?
+
+14:10:17 --> 14:10:20
+Tejal Bhatti: No, no, nothing, you just need to execute it.
+
+14:10:24 --> 14:10:29
+Tejal Bhatti: Are you getting, ah, this data frame or it is giving you error?
+
+14:10:30 --> 14:10:33
+Pieter Albrecht: Was it BD for pandas?
+
+14:10:32 --> 14:10:40
+Tejal Bhatti: Mm-hmm. Here I have written, look, import pandas as PD, so we have created short form for pandas.
+
+14:10:35 --> 14:10:37
+Pieter Albrecht: Bye.
+
+14:10:40 --> 14:10:43
+Tejal Bhatti: And if it is working for you.
+
+14:10:45 --> 14:10:46
+Tejal Bhatti: No?
+
+14:10:46 --> 14:10:51
+Barsha Mishra: Give errors. My giving error.
+
+14:10:46 --> 14:10:48
+Tejal Bhatti: For rest of the students?
+
+14:10:50 --> 14:10:52
+Tejal Bhatti: It is giving you that.
+
+14:10:51 --> 14:10:55
+Jedrzej Czarnota: It's opening a browser window.
+
+14:10:52 --> 14:10:56
+Marta Cruz: The mine is giving me a runtime.
+
+14:10:56 --> 14:11:06
+Tejal Bhatti: Okay, what you can do, if you have the Titanic dataset from yesterday, you can use it over here instead of this link.
+
+14:11:09 --> 14:11:15
+Tejal Bhatti: No module name sklearn. It means you need to install this.
+
+14:11:15 --> 14:11:17
+Tejal Bhatti: The first line.
+
+14:11:17 --> 14:11:24
+Tejal Bhatti: Just remove, uh, uncomment it, and then execute this. Peep install, scikit-learn, and all.
+
+14:11:26 --> 14:11:28
+Marta Cruz: Okay.
+
+14:11:28 --> 14:11:30
+Tejal Bhatti: For band, it's working.
+
+14:11:29 --> 14:11:32
+Elif Yurdakul: Can I share my screen?
+
+14:11:31 --> 14:11:34
+Tejal Bhatti: Okay, quickly, sir, we can check.
+
+14:11:43 --> 14:11:45
+Elif Yurdakul: So, here it is.
+
+14:11:44 --> 14:11:54
+Tejal Bhatti: No module name as is, so this is not the problem of the link, all of you listening, ah, go to top, top, Elliot.
+
+14:11:52 --> 14:11:54
+Elif Yurdakul: Yep.
+
+14:11:54 --> 14:11:57
+Tejal Bhatti: Scroll up? No, no, scroll up.
+
+14:11:56 --> 14:11:58
+Elif Yurdakul: Yeah? Oh.
+
+14:12:00 --> 14:12:03
+Tejal Bhatti: You need to execute this cell.
+
+14:12:03 --> 14:12:09
+Tejal Bhatti: Okay, but though you are getting error, then close your VS Code, open it again.
+
+14:12:10 --> 14:12:12
+Tejal Bhatti: Let's wait.
+
+14:12:12 --> 14:12:20
+Tejal Bhatti: All of you, if you are getting error that SKLAN module is not found, that means you have not yet installed package.
+
+14:12:21 --> 14:12:24
+Tejal Bhatti: Okay, so execute this first line.
+
+14:12:36 --> 14:12:38
+Tejal Bhatti: So, do you have…
+
+14:12:36 --> 14:12:45
+Armin S: Shouldn't we… Sorry, shouldn't we mention this to be…
+
+14:12:45 --> 14:12:48
+Armin S: Like we said, import.
+
+14:12:47 --> 14:12:49
+Barsha Mishra: Okay.
+
+14:12:48 --> 14:12:53
+Armin S: uh, SciKit as SKKit, something like this.
+
+14:12:52 --> 14:12:54
+Tejal Bhatti: No, no. No, no.
+
+14:12:53 --> 14:12:54
+Elif Yurdakul: No, just…
+
+14:12:54 --> 14:13:01
+Elif Yurdakul: It's done, I think. Just shift enter at the first.
+
+14:13:01 --> 14:13:02
+Elif Yurdakul: Line.
+
+14:13:02 --> 14:13:06
+Tejal Bhatti: Shift enter, that is, that means you are executing it.
+
+14:13:02 --> 14:13:03
+Elif Yurdakul: That's helpful.
+
+14:13:04 --> 14:13:06
+Elif Yurdakul: Executive, yeah.
+
+14:13:06 --> 14:13:21
+Tejal Bhatti: Uh, Armin, for your… for your question, no, we don't need to specify sklearn. Here, we are using sklearn, but in the installation, we are using scikit-learn, so we don't need to do anything. Now, execute this, Aleph.
+
+14:13:08 --> 14:13:09
+Elif Yurdakul: That's it.
+
+14:13:21 --> 14:13:23
+Elif Yurdakul: This…
+
+14:13:22 --> 14:13:26
+Tejal Bhatti: No, no, no, here, here, this little triangle.
+
+14:13:27 --> 14:13:29
+Elif Yurdakul: Ah, this one. Okay.
+
+14:13:31 --> 14:13:38
+Tejal Bhatti: So you don't need to click on any link, you just need to execute that particular set, everyone.
+
+14:13:44 --> 14:13:50
+Tejal Bhatti: Now all of you on the same page, it created 31 problem.
+
+14:13:50 --> 14:13:54
+Armin S: For me, it worked and the table was generated.
+
+14:13:55 --> 14:14:02
+Tejal Bhatti: Yeah, so this table will be there, this, ah, okay, I have not yet shared my screen.
+
+14:14:02 --> 14:14:05
+Elif Yurdakul: Yeah, this one, right?
+
+14:14:03 --> 14:14:06
+Marta Cruz: For me, it's still not working.
+
+14:14:03 --> 14:14:05
+Tejal Bhatti: Okay.
+
+14:14:05 --> 14:14:21
+Tejal Bhatti: Okay, um, Ellie, for you, it's working. All of you listen, the code is 100% working, you just need to execute that cell. Let me know, okay. Uh, who is next? Quickly share your screen so we can check.
+
+14:14:07 --> 14:14:08
+Elif Yurdakul: This…
+
+14:14:08 --> 14:14:10
+Elif Yurdakul: Okay.
+
+14:14:15 --> 14:14:17
+Marta Cruz: Yeah, okay.
+
+14:14:23 --> 14:14:25
+Barsha Mishra: Shall I share my screen?
+
+14:14:24 --> 14:14:26
+Tejal Bhatti: Yeah, yeah, go ahead.
+
+14:14:29 --> 14:14:32
+Barsha Mishra: Yeah. Hmm.
+
+14:14:31 --> 14:14:33
+Tejal Bhatti: It's coming, wait.
+
+14:14:33 --> 14:14:35
+Tejal Bhatti: Scroll down.
+
+14:14:35 --> 14:14:38
+Barsha Mishra: Yeah, there's this, uh…
+
+14:14:36 --> 14:14:39
+Tejal Bhatti: From my screen, okay, scroll up.
+
+14:14:40 --> 14:14:43
+Tejal Bhatti: This train just split up, up, up.
+
+14:14:45 --> 14:14:46
+Barsha Mishra: Mmhm.
+
+14:14:49 --> 14:14:59
+Tejal Bhatti: Okay. Execute again, close your VS Code, and open it again. Sometimes, what happened? You are installing… no, no, let it get finished.
+
+14:14:59 --> 14:15:02
+Tejal Bhatti: Okay, close this, open VS Code again, okay?
+
+14:15:02 --> 14:15:04
+Barsha Mishra: Shall I close now?
+
+14:15:03 --> 14:15:04
+Tejal Bhatti: Mm-hmm.
+
+14:15:06 --> 14:15:12
+Tejal Bhatti: And open it again. Meanwhile, I am asking to Peter, what is your query?
+
+14:15:13 --> 14:15:16
+Pieter Albrecht: I'm getting an error as well.
+
+14:15:16 --> 14:15:18
+Tejal Bhatti: What error you are getting?
+
+14:15:16 --> 14:15:24
+Pieter Albrecht: Um, I just restart… I just restarted it. I could not find a version that satisfies the requirement install.
+
+14:15:23 --> 14:15:24
+Barsha Mishra: Oh…
+
+14:15:26 --> 14:15:32
+Tejal Bhatti: Ah, okay, Barsha, for you, I think this is different, Python not found.
+
+14:15:26 --> 14:15:28
+Pieter Albrecht: Should I share?
+
+14:15:32 --> 14:15:33
+Tejal Bhatti: Okay.
+
+14:15:32 --> 14:15:38
+Barsha Mishra: Yeah, this always pops up, but I can cancel this, maybe, because it works.
+
+14:15:34 --> 14:15:35
+Tejal Bhatti: Yeah, okay.
+
+14:15:36 --> 14:15:53
+Tejal Bhatti: No, but because of that, maybe you are getting issue. Okay, right now, I would, uh, suggest you to just look at my screen, don't do anything in your system. I will look after you, okay? I just noted you. Uh, Peter, are you also getting same type of error?
+
+14:15:54 --> 14:15:58
+Pieter Albrecht: Uh, I think a different… I'm not 100% sure if it's the same, but it's, um…
+
+14:15:58 --> 14:16:00
+Tejal Bhatti: Show me.
+
+14:15:59 --> 14:16:01
+Pieter Albrecht: Yes, I'll show you.
+
+14:16:05 --> 14:16:07
+Pieter Albrecht: Can you see my screen?
+
+14:16:06 --> 14:16:12
+Tejal Bhatti: Yes. No… okay, scroll up. No, no.
+
+14:16:07 --> 14:16:11
+Pieter Albrecht: So first, I just restarted it, so I'll have to…
+
+14:16:12 --> 14:16:16
+Tejal Bhatti: Scroll up, up, up. Execute this for sale. Yes.
+
+14:16:12 --> 14:16:14
+Pieter Albrecht: Yes?
+
+14:16:16 --> 14:16:19
+Pieter Albrecht: I think I did. I'm still in base, though, now.
+
+14:16:18 --> 14:16:35
+Tejal Bhatti: No, no, it is executing. Don't, don't look at the terminal we are right now. All of you, uh, make this thing clear in your mind. When we work in the notebook, don't look at a terminal. What is important? Here, on the right-hand side, here, your environment should be there.
+
+14:16:35 --> 14:16:37
+Tejal Bhatti: Okay.
+
+14:16:37 --> 14:16:39
+Pieter Albrecht: Yep.
+
+14:16:37 --> 14:16:45
+Tejal Bhatti: Uh, Peter, for you, now, there is no problem. Once this execution will over, you can continue.
+
+14:16:50 --> 14:16:51
+Tejal Bhatti: Okay.
+
+14:16:52 --> 14:16:56
+Ayhan: Yeah. Can I jump in, then, with the sharing screen? Yeah.
+
+14:16:54 --> 14:16:57
+Tejal Bhatti: Yeah, yeah, yeah. Mm-hmm.
+
+14:16:59 --> 14:17:02
+Tejal Bhatti: For you, scroll down.
+
+14:17:03 --> 14:17:09
+Tejal Bhatti: Pip install, ah, this is commented, no? You, you have to uncomment it. Wait.
+
+14:17:09 --> 14:17:13
+Tejal Bhatti: Let me, let me edit it. Remove this hashtag.
+
+14:17:16 --> 14:17:18
+Tejal Bhatti: Execute now.
+
+14:17:18 --> 14:17:20
+Ayhan: Thank you.
+
+14:17:19 --> 14:17:21
+Tejal Bhatti: Welcome.
+
+14:17:22 --> 14:17:35
+Tejal Bhatti: Only Barsha, I need to look after you, because there is some… another issue. It's okay, we will resolve it. But for rest of the student, it's working fine. Only, um…
+
+14:17:35 --> 14:17:43
+Tejal Bhatti: You have not, ah, executed the first cell because of that you are getting error, ah, yeah, Rudy.
+
+14:17:48 --> 14:17:52
+Roodabeh Seif: Yeah, so, uh, the code is, um…
+
+14:17:52 --> 14:17:59
+Roodabeh Seif: The last thing I'm seeing is requirement already satisfied, so it's done.
+
+14:17:58 --> 14:18:00
+Tejal Bhatti: Mm-hmm.
+
+14:17:59 --> 14:18:03
+Roodabeh Seif: I just… I need to close and open it again.
+
+14:18:02 --> 14:18:03
+Tejal Bhatti: Mm-hmm.
+
+14:18:03 --> 14:18:04
+Roodabeh Seif: Yeah, okay, thank you.
+
+14:18:03 --> 14:18:05
+Tejal Bhatti: Okay.
+
+14:18:06 --> 14:18:15
+Tejal Bhatti: So all are ready except Barsha, but don't worry, you just look at my screen, okay, we will, ah, do that.
+
+14:18:15 --> 14:18:18
+Tejal Bhatti: Shall I move forward, everyone?
+
+14:18:19 --> 14:18:22
+Tejal Bhatti: Okay, let me share my screen.
+
+14:18:26 --> 14:18:42
+Tejal Bhatti: So, ah, before start, start doing our work, we need to set up it, so whatever the tools we need, we need to collect those tools, so that we have already done. Now, in this, ah, notebook, we are working.
+
+14:18:42 --> 14:19:02
+Tejal Bhatti: First, with Titanic dataset. So, this is the link from where we have downloaded our data. Sorry, pd.read_csv. What it will do, it will read your CSV file and put it in one variable. That variable name is df.
+
+14:19:02 --> 14:19:19
+Tejal Bhatti: Okay, now this DF, the, uh, here you can see DF dot shape, so it has 891 rows and 12 columns, okay? But here, we cannot see all on the screen, so that's why we have DF dot head.
+
+14:19:19 --> 14:19:22
+Tejal Bhatti: By default, it will show you first 5 rows.
+
+14:19:22 --> 14:19:33
+Tejal Bhatti: So, we quickly go through this column, df.column, so here we have the different columns. Out of this, can you tell me which is your target column?
+
+14:19:34 --> 14:19:50
+Tejal Bhatti: We have passenger ID, survive, P class, name, sex, age. This is sibling plus spouse, and I think this is parents plus child. Something is there. That is a notation in the database data set. Sorry.
+
+14:19:51 --> 14:19:54
+Tejal Bhatti: So, which is our target column over here?
+
+14:19:55 --> 14:19:57
+Barsha Mishra: Passenger ID.
+
+14:19:58 --> 14:20:01
+Tejal Bhatti: Um, no.
+
+14:20:00 --> 14:20:03
+Julia Antunes: What are we looking for, one more time?
+
+14:20:03 --> 14:20:20
+Tejal Bhatti: That's a question. Okay. So here we want to find out whether the passengers survived or not. Okay. That is our ultimate aim. So this survived, that is our target column, or we can say as a label. Okay. And rest of the columns are our feature columns.
+
+14:20:05 --> 14:20:07
+Barsha Mishra: My name…
+
+14:20:21 --> 14:20:34
+Tejal Bhatti: Now, you should understand this thing, feature engineering. Before we start, uh, implementing our, um, algorithm, we need to take care. This is, you can consider as a data cleaning part.
+
+14:20:34 --> 14:20:42
+Tejal Bhatti: But advanced data cleaning in which we are doing something with the columns also. So the first thing.
+
+14:20:42 --> 14:20:49
+Tejal Bhatti: What is feature engineering? That is getting the data ready so that the model can learn from it.
+
+14:20:49 --> 14:21:04
+Tejal Bhatti: as we know, raw data is messy, so we need to, um… we need to correct it, but at the same time, we will also look at the columns. So, the first is handle missing value, okay?
+
+14:21:04 --> 14:21:18
+Tejal Bhatti: as you already know, when we have raw data, we may have some missing, uh, value in it. Okay? So, your model cannot work whenever there is blank in any row. So, we need to fill it.
+
+14:21:18 --> 14:21:34
+Tejal Bhatti: There is a rule. If you have so many missing value, for example, you have total 1000 data, and in 1000 row, if more than 500 rows has missing value, better to drop that particular column.
+
+14:21:35 --> 14:21:45
+Tejal Bhatti: Okay? We will treat missing value only in which case where our missing value is below 50% of the total data.
+
+14:21:46 --> 14:21:47
+Tejal Bhatti: Got it.
+
+14:21:48 --> 14:21:51
+Tejal Bhatti: This is the…
+
+14:21:49 --> 14:21:53
+Armin S: Yes, but how can we fill in from…
+
+14:21:53 --> 14:21:54
+Tejal Bhatti: Okay.
+
+14:21:53 --> 14:21:55
+Armin S: Just random.
+
+14:21:54 --> 14:21:56
+Tejal Bhatti: I'll explain.
+
+14:21:56 --> 14:22:12
+Tejal Bhatti: So, first is feature engineering, first step is handle missing value. This is the code with which you can find out. So, DF, that is our data frame, is NA.sum. So, here you can see age.
+
+14:22:12 --> 14:22:23
+Tejal Bhatti: cabin and embark. These two particular things has missing value, but in case of cabin, it has 687 missing value.
+
+14:22:23 --> 14:22:33
+Tejal Bhatti: We have total approximately 800 rows. Out of 800 rows, 687 rows has missing value for this particular column.
+
+14:22:33 --> 14:22:50
+Tejal Bhatti: Smart decision, just drop it. Okay, now question, how to fill missing value? So, that depends on the type of column. If your column is numerical, okay, in case of age, it is number column.
+
+14:22:50 --> 14:23:06
+Tejal Bhatti: I can show you here. Look, this name, that is categorical column, okay? Sex is also categorical column. Then, ticket, we can consider as category because it has some letters also.
+
+14:23:06 --> 14:23:10
+Tejal Bhatti: So whenever, let me write it here.
+
+14:23:12 --> 14:23:14
+Tejal Bhatti: Umm.
+
+14:23:17 --> 14:23:20
+Tejal Bhatti: column first thread.
+
+14:23:20 --> 14:23:23
+Tejal Bhatti: Whether it is number.
+
+14:23:23 --> 14:23:35
+Tejal Bhatti: or it is category. Category or text, okay, in simple way. So, if it is number, then you have option. Either, what you can do, you can look at that particular column.
+
+14:23:35 --> 14:23:39
+Tejal Bhatti: Find the average of that particular column and then.
+
+14:23:40 --> 14:23:50
+Tejal Bhatti: Instead of missing value, you can place average of that. Another mathematics behind this, that is, find the median of that particular column.
+
+14:23:53 --> 14:24:09
+Tejal Bhatti: Treat missing value itself is a big task, okay, because we cannot randomly just take the average of the column and fill it, or take the median and the fill it. We need to check the nature of the data, and that is…
+
+14:24:09 --> 14:24:23
+Tejal Bhatti: much, uh, we can say the data scientist work, okay? But these are the methods available with which we can, uh, play… we can refill, otherwise we can treat missing value.
+
+14:24:23 --> 14:24:33
+Tejal Bhatti: What if you have category? So, in that case, you will replace missing value with more. More, that means what? Most frequent value.
+
+14:24:33 --> 14:24:46
+Tejal Bhatti: Okay? In case of sex, suppose male and female, two values are there. So, if female, uh… if we find more of this, for example, male value is 50.
+
+14:24:46 --> 14:25:00
+Tejal Bhatti: And female value is, for example, 20. So, in this case, your mode will be male. So, whenever missing values are there, we will replace that missing value with male.
+
+14:25:00 --> 14:25:01
+Tejal Bhatti: Got it?
+
+14:25:02 --> 14:25:04
+Tejal Bhatti: Simple.
+
+14:25:05 --> 14:25:09
+Tejal Bhatti: So this is how we can treat missing value.
+
+14:25:11 --> 14:25:17
+Tejal Bhatti: Okay, so that is the first step of feature engineering.
+
+14:25:17 --> 14:25:28
+Tejal Bhatti: And again, there is no rule that we should, uh, do this step first, this step second in feature engineering, okay? That really depends on your use case.
+
+14:25:29 --> 14:25:32
+Tejal Bhatti: So, we did this. Now, the second part.
+
+14:25:33 --> 14:25:42
+Tejal Bhatti: Turn category into numbers. Again, the second concept. Remember, when we build any…
+
+14:25:42 --> 14:25:45
+Tejal Bhatti: Machine learning algorithm.
+
+14:25:48 --> 14:25:57
+Tejal Bhatti: All our data, this should be only in number before we feed this to our algorithm.
+
+14:25:57 --> 14:25:58
+Tejal Bhatti: Okay.
+
+14:25:59 --> 14:26:12
+Tejal Bhatti: algorithm understand only numbers. So, if in, uh, if there are any tags in our data, we need to transform that tags into numbers.
+
+14:26:12 --> 14:26:26
+Tejal Bhatti: There are various methods available to do this. One of the methods is create dummy, okay? Another is encoder, but for you, I think dummy, if you understand that, that's well and good.
+
+14:26:26 --> 14:26:37
+Tejal Bhatti: What it will do, for example, male and female, so it will replace male with 1, female with 0, for example, okay? So this is how you need to transform.
+
+14:26:37 --> 14:26:40
+Tejal Bhatti: Ah, text into numbers.
+
+14:26:42 --> 14:26:52
+Tejal Bhatti: Third, remove useless columns, okay? That, ah, that I explain you. Let me show… I have one example, I think, here.
+
+14:26:57 --> 14:27:11
+Tejal Bhatti: So, turn categories into numbers, so that is get underscore dummies, that is one of the method, it do that. So, in our case, we have this sex and embark, we have transformed them into numbers.
+
+14:27:12 --> 14:27:27
+Tejal Bhatti: Then here, everything… we are not taking name, we are dropping these columns over here, okay? This name column and ticket column. Can anybody tell me why we drop name and ticket?
+
+14:27:29 --> 14:27:32
+Julia Antunes: Doesn't really matter, does it?
+
+14:27:32 --> 14:27:33
+Tejal Bhatti: Sorry?
+
+14:27:33 --> 14:27:38
+Julia Antunes: It doesn't really matter for my outcome, like to know the name of the person.
+
+14:27:38 --> 14:28:06
+Tejal Bhatti: Yes, so the name model doesn't read, first of all, model doesn't understand the real words, okay, so it look for patterns when it look into the data, and when we have names, so each unique name, so model cannot find any pattern in it, right, so there is no information. That's why whenever we have like passenger ID, name, or this ticket number, because these are also unique values, so we can drop it.
+
+14:28:08 --> 14:28:11
+Tejal Bhatti: So here now we have.
+
+14:28:12 --> 14:28:27
+Tejal Bhatti: Uh, this, and we keep only numbers, okay. Now, remove columns that never change. So, this is example I told you earlier, when particular column has all the same values, so the same thing.
+
+14:28:27 --> 14:28:33
+Tejal Bhatti: It is not giving any information to our column, right? Our model.
+
+14:28:33 --> 14:28:40
+Tejal Bhatti: Because all the values, all the rows in that column is the same, there is no variation.
+
+14:28:40 --> 14:28:43
+Tejal Bhatti: So that's why we are not going to keep it.
+
+14:28:43 --> 14:28:45
+Tejal Bhatti: Oh, thank you.
+
+14:28:49 --> 14:29:05
+Tejal Bhatti: So for that, we have this variance threshold, uh, that is one of the tool in sklearn that does task for us. And this is the code. One suggestion, don't try to understand each and every line of code.
+
+14:29:05 --> 14:29:16
+Tejal Bhatti: Okay? Otherwise, it will be too overwhelmed for you. What is necessary for you? Just try to understand what each block is doing.
+
+14:29:16 --> 14:29:29
+Tejal Bhatti: So that's why in your notebook, which is there in the portal, everything is given in one block. So for you, I have divided in a small, small block, so you can understand it's working. Okay?
+
+14:29:31 --> 14:29:39
+Tejal Bhatti: So, we have removed the columns that are never changed, but here, I check with that.
+
+14:29:39 --> 14:29:56
+Tejal Bhatti: can you see over here? Here, it is selecting the features they have… which has variation. But if I want to select… if I want to see which are the features that are not changing, and uh… this algorithm… this particular variance threshold is dropping.
+
+14:29:56 --> 14:30:00
+Tejal Bhatti: For that, I just need to add, over here, one.
+
+14:30:00 --> 14:30:04
+Tejal Bhatti: Okay? This is, like, opposite.
+
+14:30:04 --> 14:30:07
+Tejal Bhatti: Here it is selecting, here it is.
+
+14:30:07 --> 14:30:22
+Tejal Bhatti: doing negative of it, okay? But, can you see over here, empty list? So, what it indicates that, in your dataset, there is no column, as such, which is giving you zero variance threshold.
+
+14:30:23 --> 14:30:25
+Tejal Bhatti: Okay.
+
+14:30:27 --> 14:30:42
+Tejal Bhatti: What I did… don't… don't try to understand this code. This particular thing, what it is doing, it is removing the columns that are never changing, okay? So here, in the DF, you have the thing which has, uh… which are the…
+
+14:30:42 --> 14:30:56
+Tejal Bhatti: these are the column, uh, they have variation. But what if I want to see the columns, uh, which are… which are not having any variation? So for that, I have…
+
+14:30:56 --> 14:31:08
+Tejal Bhatti: write down this code, and here, I am getting empty list. What it indicates? In our dataset, there is no column which has zero variance threshold.
+
+14:31:08 --> 14:31:14
+Julia Antunes: Okay, um, so… in my notebook, this second cell doesn't exist.
+
+14:31:08 --> 14:31:09
+Tejal Bhatti: Okay.
+
+14:31:12 --> 14:31:13
+Tejal Bhatti: You…
+
+14:31:13 --> 14:31:15
+Tejal Bhatti: It's not there.
+
+14:31:14 --> 14:31:18
+Julia Antunes: Yeah, okay, so it's just to double check what we did in the…
+
+14:31:18 --> 14:31:25
+Tejal Bhatti: Yeah, yeah, so this is… yeah, it is just for showing you I have added this code, okay?
+
+14:31:18 --> 14:31:20
+Julia Antunes: Okay.
+
+14:31:26 --> 14:31:39
+Tejal Bhatti: Now, step 5, remove duplicate slide column. This is what we have discussed in our morning session. For example, birth year and age, they both are giving the same information to model, right?
+
+14:31:39 --> 14:31:47
+Tejal Bhatti: So in this case, what we are going to do, we are finding core relationship between each of the features.
+
+14:31:47 --> 14:31:55
+Tejal Bhatti: Okay? And the columns, which are highly correlated, we are dropping one of the column.
+
+14:31:55 --> 14:32:04
+Tejal Bhatti: And we are taking only one column. For example, three columns that are highly correlated, so we are dropping two columns, we are taking only one.
+
+14:32:04 --> 14:32:13
+Tejal Bhatti: This is different than dimensionality reduction, okay? We are taking the column as it is, but we are selecting.
+
+14:32:14 --> 14:32:16
+Tejal Bhatti: Got it?
+
+14:32:17 --> 14:32:19
+Tejal Bhatti: Yeah Peter.
+
+14:32:19 --> 14:32:25
+Pieter Albrecht: Quick question. How do we decide? We decide ourselves what's a high correlation or?
+
+14:32:25 --> 14:32:29
+Tejal Bhatti: Yeah, for that, I'm showing you here, there is one graph.
+
+14:32:27 --> 14:32:29
+Pieter Albrecht: Yeah, okay.
+
+14:32:30 --> 14:32:32
+Tejal Bhatti: So this is the.
+
+14:32:32 --> 14:32:35
+Tejal Bhatti: Correlation metric, ah.
+
+14:32:35 --> 14:32:51
+Tejal Bhatti: We have this tool correlation underscore matrix in sklearn. What it will do, it will calculate. Otherwise it will try to find out the correlation between your target column and your feature.
+
+14:32:51 --> 14:32:57
+Tejal Bhatti: One by one. So, if you see, this is called heat map by… just for your information.
+
+14:32:57 --> 14:33:02
+Tejal Bhatti: So can you see here each of the features?
+
+14:33:03 --> 14:33:13
+Tejal Bhatti: So, each of the feature, what this heatmap is doing, it is finding the correlation between feature and the target variable.
+
+14:33:13 --> 14:33:24
+Tejal Bhatti: And it is doing for all the features. One, that means what? It is highly correlated, and this last dark blue, that is no correlation.
+
+14:33:24 --> 14:33:29
+Tejal Bhatti: So, can you see this diagonal? Why it is all one? Because…
+
+14:33:30 --> 14:33:32
+Tejal Bhatti: Here on the…
+
+14:33:32 --> 14:33:34
+Tejal Bhatti: Passenger ID.
+
+14:33:33 --> 14:33:35
+Pieter Albrecht: Because they all embarked?
+
+14:33:34 --> 14:33:38
+Tejal Bhatti: And passenger ID. Okay.
+
+14:33:38 --> 14:33:42
+Tejal Bhatti: It is doing correlation with itself also.
+
+14:33:43 --> 14:33:46
+Tejal Bhatti: So that's why diagonal all are red.
+
+14:33:46 --> 14:34:06
+Tejal Bhatti: But, can you see over here, for example, 0.55 VTE, so here I have fare, and here I have P class, okay? So, of course, that is direct correlation. Class, that is first class, second class, third class, and what is the ticket, so they are correlated. That's why we are getting this.
+
+14:34:07 --> 14:34:23
+Tejal Bhatti: Another thing we can check, uh, I don't find any other highly correlation, but this is what, uh, this is the heat map with which you can find out the correlation between the features and we can select the features.
+
+14:34:23 --> 14:34:24
+Tejal Bhatti: Okay.
+
+14:34:26 --> 14:34:27
+Tejal Bhatti: Next.
+
+14:34:28 --> 14:34:32
+Pieter Albrecht: I'm sorry, is there a tool to create such a heat map, or do we…
+
+14:34:28 --> 14:34:30
+Tejal Bhatti: No.
+
+14:34:32 --> 14:34:34
+Tejal Bhatti: Sorry?
+
+14:34:33 --> 14:34:37
+Pieter Albrecht: Is there a word? How do we create such a heat map?
+
+14:34:37 --> 14:34:55
+Tejal Bhatti: Okay, I'm giving you this, I think… in the notebook, you have only this, right? Okay, you can… heatmap, that is also, uh, the library in CBON. CBON, that is the library, uh, in Python, responsible for plotting graph.
+
+14:34:39 --> 14:34:42
+Pieter Albrecht: It's a script?
+
+14:34:42 --> 14:34:44
+Pieter Albrecht: Yeah, I think so, yeah.
+
+14:34:55 --> 14:34:59
+Tejal Bhatti: Okay, Matplotlib and Seaborn, both are used for this purpose.
+
+14:34:59 --> 14:35:06
+Tejal Bhatti: I'm giving you this in the chat if you want, then just copy-paste it, and you can execute.
+
+14:35:09 --> 14:35:12
+Tejal Bhatti: Next, ah.
+
+14:35:18 --> 14:35:25
+Tejal Bhatti: The step 6 separate features and the target okay now ah okay remember this thing also.
+
+14:35:25 --> 14:35:43
+Tejal Bhatti: In machine learning, feature is, most of the time, it is represented with X, and target is represented with Y, okay? So, now we are splitting X and Y, because right now, we have X and Y, everything in DF.
+
+14:35:44 --> 14:35:48
+Tejal Bhatti: So we will take our features and the target separate.
+
+14:35:49 --> 14:36:11
+Tejal Bhatti: So this is like this is our X and this is our Y. Can you see here DF drop survive survive. That is our column name, column name of our target. So we are dropping it over here. So now in the X except survive, we have everything and Y is equal to DF and the survive. Okay.
+
+14:36:12 --> 14:36:15
+Tejal Bhatti: So now we have eSmarter.
+
+14:36:15 --> 14:36:20
+Martha Olukayode: Yeah, just a question. Um, from my, um…
+
+14:36:20 --> 14:36:26
+Martha Olukayode: for my screen. I couldn't see this heat list, this map.
+
+14:36:23 --> 14:36:36
+Tejal Bhatti: Yeah, so I have… I just made these changes into breaks, so that's why it is not there in the notebook. I have given code in the chat, so maybe you can copy-paste it, and you will get the heatmap.
+
+14:36:30 --> 14:36:32
+Martha Olukayode: Bye.
+
+14:36:36 --> 14:36:37
+Martha Olukayode: Okay, thank you.
+
+14:36:37 --> 14:36:38
+Tejal Bhatti: Welcome.
+
+14:36:39 --> 14:37:00
+Tejal Bhatti: Now we are doing over here train test split. Did you remember 80%, 60%, 80/20? So this is the library train test split. We need to give our feature, we need to give our target and here test size is equal to 0.2. That means 20% of the data used for testing.
+
+14:37:01 --> 14:37:02
+Tejal Bhatti: Okay.
+
+14:37:02 --> 14:37:06
+Armin S: And what's this, uh, what the purpose of…
+
+14:37:05 --> 14:37:07
+Tejal Bhatti: Random statement.
+
+14:37:06 --> 14:37:14
+Armin S: Uh, separating feature and target, uh, what does it mean exactly? This is only for.
+
+14:37:14 --> 14:37:19
+Armin S: Uh, being able to use this split function?
+
+14:37:15 --> 14:37:16
+Tejal Bhatti: Here?
+
+14:37:19 --> 14:37:22
+Tejal Bhatti: Where exactly here are you talking about?
+
+14:37:21 --> 14:37:27
+Armin S: Yes. This is step separating feature and target.
+
+14:37:27 --> 14:37:30
+Armin S: And then a split.
+
+14:37:28 --> 14:37:30
+Tejal Bhatti: Yeah, so that is what we are…
+
+14:37:30 --> 14:37:44
+Tejal Bhatti: Yeah, so here, I have just explained you in form of text, the sixth step we are performing, that is separate features and the target. Features, that is our X, and target is our Y.
+
+14:37:44 --> 14:37:49
+Tejal Bhatti: So here I have given that and here we are performing that.
+
+14:37:50 --> 14:37:54
+Tejal Bhatti: Here is just the explanation. This is markdown file.
+
+14:37:55 --> 14:38:07
+Tejal Bhatti: In, uh, Python… here in VS Code, can you see? Plus code? So that is for writing. And markdown, when you want to add this type of, um…
+
+14:38:07 --> 14:38:11
+Tejal Bhatti: Text at the time we can click over here markdown.
+
+14:38:11 --> 14:38:18
+Tejal Bhatti: So, this is actually markdown cell, not the… likewise, you can create it.
+
+14:38:18 --> 14:38:21
+Armin S: Yes, yes. Uh, so…
+
+14:38:21 --> 14:38:23
+Armin S: My question was the…
+
+14:38:21 --> 14:38:22
+Tejal Bhatti: Mmhm.
+
+14:38:23 --> 14:38:29
+Armin S: Is it related to the way we split?
+
+14:38:29 --> 14:38:32
+Armin S: Or it's just a random split.
+
+14:38:32 --> 14:38:33
+Tejal Bhatti: No, no.
+
+14:38:32 --> 14:38:40
+Armin S: Uh, this 80-20 randomly selects, and it doesn't look at, uh, the patterns or…
+
+14:38:40 --> 14:38:54
+Armin S: maybe, 20% of survivors and non-survivors to be out or no, just 20% of everyone. And it can be then all survivors randomly.
+
+14:38:45 --> 14:38:48
+Tejal Bhatti: Ah, very good.
+
+14:38:52 --> 14:39:07
+Tejal Bhatti: I, I, I got your point. So, what it do, um, what it does internally, 80% of the passenger and 20, so it is not like that. So, for example, you have 1,000…
+
+14:39:07 --> 14:39:20
+Tejal Bhatti: rows, okay? So, 1000, that means 80 per… 8… first, 1 to 800, and then maybe 801 to 1000. So, 20 and 80.
+
+14:39:20 --> 14:39:27
+Tejal Bhatti: But it is not doing something like that. It is randomly picking up 80% of the data.
+
+14:39:27 --> 14:39:29
+Tejal Bhatti: Okay.
+
+14:39:29 --> 14:39:32
+Tejal Bhatti: But yeah, good point.
+
+14:39:32 --> 14:39:33
+Armin S: Okay, thank you.
+
+14:39:33 --> 14:39:35
+Tejal Bhatti: Welcome.
+
+14:39:35 --> 14:39:56
+Tejal Bhatti: So, it is randomly taking, and later on, I have also printed the test data, so that part will be clear to you. So, this is splitting. Once we have split the data, now I can, uh, build my model. So, here we are going to do, uh, logistic regression, okay? Now, you remember the steps?
+
+14:39:56 --> 14:40:04
+Tejal Bhatti: When you want to build any model, first step is train-test split that we already did. What is the second step?
+
+14:40:06 --> 14:40:10
+Tejal Bhatti: We need to define the model. Okay.
+
+14:40:08 --> 14:40:11
+Armin S: A training day model.
+
+14:40:10 --> 14:40:26
+Tejal Bhatti: Mm-hmm, yeah. So here, uh, this standard scaler, did you remember? At the starting, I told you, standard scaler. For example, here, I try to explain you. There are 3 columns, okay? Sex, age, and fare.
+
+14:40:26 --> 14:40:31
+Tejal Bhatti: So here, obviously, we have 0 or 1 value.
+
+14:40:31 --> 14:40:46
+Tejal Bhatti: 1 for male, 0 for female, how it is, uh, done internally, but 0 and 1. In the age, you may have, like, 0 to 80, not more than that. And in the fare, this is the 3-digit number.
+
+14:40:46 --> 14:41:01
+Tejal Bhatti: So if we do not do any scaling and we directly give this particular thing to our model, then what our model will learn from this data, it will give more importance to fare as compared to other two columns.
+
+14:41:03 --> 14:41:13
+Tejal Bhatti: Because it has higher number? Because at the end of the day, model understand only numbers. But we don't want this, right? So that's why we need to do…
+
+14:41:12 --> 14:41:14
+Armin S: Yes.
+
+14:41:13 --> 14:41:26
+Tejal Bhatti: we need to do scaling. What is scaling? Uh, there… there are two types of scaling, min-max scaler and the standard scaler. It will do… it will find out the…
+
+14:41:26 --> 14:41:46
+Tejal Bhatti: Um, there is 1 equation. I didn't remember the equation right now, but it will take 1 particular, like, it will do for each and every column, and for this column, it will try to find out what is minimum value, what is maximum value, what is average value, and according to that.
+
+14:41:46 --> 14:41:55
+Tejal Bhatti: It will transform this 0 to 512 in form of maybe minus 1 to plus 1.
+
+14:41:55 --> 14:42:02
+Tejal Bhatti: So, all your numbers 02512 will be transformed into minus 1 to plus 1.
+
+14:42:02 --> 14:42:06
+Tejal Bhatti: The same is applicable for the age and for the sex.
+
+14:42:06 --> 14:42:15
+Tejal Bhatti: Okay, so now your model can see the number which are on a equal scale.
+
+14:42:17 --> 14:42:29
+Tejal Bhatti: Once scaling is done, now we need to… this is how we have defined the scalar, then we need to fit and transform. So, we are applying that scalar on our data.
+
+14:42:30 --> 14:42:33
+Tejal Bhatti: Now, we will trade your seat.
+
+14:42:31 --> 14:42:36
+Armin S: And can we see the new table, maybe the first five?
+
+14:42:36 --> 14:42:41
+Armin S: Raws of the now scaled data.
+
+14:42:40 --> 14:42:42
+Tejal Bhatti: Hmmm.
+
+14:42:41 --> 14:42:41
+Armin S: As a table?
+
+14:42:42 --> 14:42:43
+Tejal Bhatti: Yes.
+
+14:42:51 --> 14:42:56
+Tejal Bhatti: Okay? 1.0.8.90.
+
+14:42:58 --> 14:42:59
+Tejal Bhatti: Okay.
+
+14:42:59 --> 14:43:03
+Tejal Bhatti: So this is all about scaling now we are.
+
+14:43:03 --> 14:43:25
+Tejal Bhatti: Building our model so you need to define model first somewhere someone has already write down the code for this okay logistic regression how it should behave linear regression how it should behave so we don't need to start from scratch so we are taking the model logistic regression.
+
+14:43:25 --> 14:43:40
+Tejal Bhatti: What we want, maximum iteration 1000. So model should do that looping part 1000 time that we are giving as a parameter. Now here is the training part. Look, only one line of code.
+
+14:43:41 --> 14:43:48
+Tejal Bhatti: LR underscore model, that is, we have created object, now we are applying that object on our data.
+
+14:43:48 --> 14:44:00
+Tejal Bhatti: we will do X, train scale, and Y train. We are giving model feature, we are giving model target, and we are doing model.fit.
+
+14:44:00 --> 14:44:06
+Tejal Bhatti: model.fit, that means model has started… start learning from your data.
+
+14:44:06 --> 14:44:11
+Tejal Bhatti: Okay? It takes only few seconds.
+
+14:44:11 --> 14:44:14
+Tejal Bhatti: Okay? Done. Training is done.
+
+14:44:14 --> 14:44:18
+Tejal Bhatti: For 800 rupees, it's done now.
+
+14:44:18 --> 14:44:30
+Tejal Bhatti: we need to predict. Now, we need to predict on our test data. So, this is the data model has not seen during the training. Can you see the difference between this variable?
+
+14:44:34 --> 14:44:38
+Julia Antunes: Yeah, one is strain scale, the other is test scale.
+
+14:44:37 --> 14:45:04
+Tejal Bhatti: Okay, so we are training model only using training data. Now, once this, this is our model, okay, LR underscore model. This model is trained with our tightening data set. Now we are using this model to predict any random row, but that should be the column same as our data set. So we have X test scale LR model underscore predict. This will predict.
+
+14:45:04 --> 14:45:10
+Tejal Bhatti: Your X test and the result is there in L R underscore thread.
+
+14:45:10 --> 14:45:12
+Tejal Bhatti: Okay.
+
+14:45:12 --> 14:45:19
+Tejal Bhatti: I think in the morning, I and you asked this, right? Prediction, it is in the form of probability.
+
+14:45:19 --> 14:45:33
+Tejal Bhatti: So, here, this LR underscore PRED, that will give you whether the person is survive or not. Okay, 0 and 1. But this PREDICT underscore PROBA, that is giving you probability.
+
+14:45:33 --> 14:45:38
+Tejal Bhatti: 0 to 100 okay I'll show you I have printed that.
+
+14:45:38 --> 14:45:45
+Tejal Bhatti: You might not have this particular thing, okay? I have added that later on, but if you want, then I can give you.
+
+14:45:47 --> 14:45:51
+Tejal Bhatti: Check resource so that, ah.
