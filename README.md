@@ -86,3 +86,7 @@ python main.py
 - The script is returned as a single plain-text string. If the UI needs more (title, the 5 points as separate fields), `create_script` can return a dict instead.
 - The script uses a single narrator. Two-host dialogue would need different voices in the TTS step.
 - Never commit `.env`. It is listed in `.gitignore`.
+
+## Presentation 
+Our presentation can be found here: 
+https://docs.google.com/presentation/d/1J2VMR2fDF-DEWNAG9MfrvaDgOxRMwgVxpmk9kCvmXf0/edit?slide=id.h1bb2586a8d7c1a83_0_10#slide=id.h1bb2586a8d7c1a83_0_10
